@@ -11,7 +11,7 @@ use webdocker::random_movie;
 //create a function that returns a hello world
 #[get("/")]
 async fn hello() -> impl Responder {
-    HttpResponse::Ok().body("Hello, I will recommand the best book around the world for you! Please type book.")
+    HttpResponse::Ok().body("Hello, I will recommend the best book around the world for you! Please type book.")
 }
 
 //create a function that returns a random best movie
@@ -35,7 +35,7 @@ async fn main() -> std::io::Result<()> {
     //add a print message to the console that the service is running
     println!("Running the service");
     HttpServer::new(|| App::new().service(hello).service(movie).service(version))
-        .bind("0.0.0.0:8080")?
+        .bind("0.0.0.0:8088")?
         .run()
         .await
 }
